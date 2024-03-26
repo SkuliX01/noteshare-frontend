@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,} from "@/components/ui/alert-dialog"
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,} from "@/components/ui/alert-dialog"
 import Link from 'next/link';
-import { SiBuymeacoffee } from "react-icons/si";
 
 export default function Home() {
   return (
@@ -11,8 +10,8 @@ export default function Home() {
         <p className='text-center text-[24px]'>~ App where you can share your notes</p>
         <div className="flex justify-center align-center pt-[15px]">
           <AlertDialog>
-            <AlertDialogTrigger asChild className="mr-[10px] bg-black text-white hover:bg-[#292f3d] hover:text-white">
-              <Button variant="outline">Read More</Button>
+            <AlertDialogTrigger asChild>
+              <Button variant="outline" className="mr-[10px] bg-black text-white hover:bg-[#292f3d] hover:text-white">Read More</Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
@@ -42,7 +41,7 @@ export default function Home() {
             </AlertDialogContent>
           </AlertDialog>
           <Button asChild variant="outline" className="mr-[10px] bg-black text-white hover:bg-[#292f3d] hover:text-white">
-            <Link href={"/getstarted"}>Get Started</Link>
+            <Link href={"/addnote"}>Get Started</Link>
           </Button>
         </div>
       </section>
