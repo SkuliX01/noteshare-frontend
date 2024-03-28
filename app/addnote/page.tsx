@@ -5,11 +5,12 @@ import { Button } from '@/components/ui/button'
 import { useState } from "react"
 import { Textarea } from "@/components/ui/textarea";
 import { Subjectlist } from '../mycomponents/list'
+import addNewNote from '../api/addNote'
 
 export default function addNote() {
 
     const [Temat, setTemat] = useState("");
-    const [Przedmiot, SetPrzedmiot] = useState("");
+    const [Przedmiot, SetPrzedmiot] = useState("polski");
     const [Notatka, setNotatka] = useState("");
     const [Autor, setAutor] = useState("");
 
@@ -39,7 +40,7 @@ export default function addNote() {
                     <Textarea placeholder="Wpisz tutaj treść swojej notatki" className="resize-none mt-[10px]" value={Notatka} onChange={HandleNotatkaChange}/>
                     <Subjectlist value={Przedmiot} onChange={HandlePrzedmiotChange}/>
                     <Input placeholder="Autor" value={Autor} onChange={HandleAutorChange} className="mt-[10px]"></Input>
-                    <Button className="w-[290px] mt-[10px]">Dodaj nową notatkę</Button>
+                    <Button className="w-[290px] mt-[10px]" onClick={() => addNewNote(Temat, Notatka, Przedmiot, Autor)}>Dodaj nową notatkę</Button>
                     </div>
                 </div>
             </section>
