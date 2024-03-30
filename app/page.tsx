@@ -24,7 +24,7 @@ export default function Home() {
                 <AlertDialogTitle className="text-[15px]">Frequently Asked Questions :</AlertDialogTitle>
               </AlertDialogHeader>
               <AlertDialogDescription>
-              <AlertDialogTitle className="text-black">Why it's taking so long to create new notes :</AlertDialogTitle>  
+              <AlertDialogTitle className="text-black">Why it&apos;s taking so long to create new notes :</AlertDialogTitle>  
                 <p className="text-black">We are using free hosting provider which are the reason for slow upload speeds</p>
               </AlertDialogDescription>
               <AlertDialogDescription>
