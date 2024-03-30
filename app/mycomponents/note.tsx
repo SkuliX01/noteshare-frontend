@@ -1,4 +1,11 @@
-export default function Note({title, subject, description, author}){
+interface NoteProps {
+    title: string,
+    subject: string,
+    description: string,
+    author: string,
+}
+
+export default function Note({title, subject, description, author}: NoteProps){
     return (
         <div className="max-w-[750px] w-10/12 h-auto rounded-[15px] bg-[#Ececec] shadow-lg mt-[20px] overflow-hidden ">
             <p className="text-[24px] text-black ml-[12px] mt-[12px]">Tytuł: {title}</p>
