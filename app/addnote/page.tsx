@@ -20,7 +20,7 @@ export default function AddNote() {
         setTemat(event.target.value)
     }
 
-    const HandlePrzedmiotChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const HandlePrzedmiotChange = (event: ChangeEvent<HTMLSelectElement>) => {
         SetPrzedmiot(event.target.value)
     }
 
