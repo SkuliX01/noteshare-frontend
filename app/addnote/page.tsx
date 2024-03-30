@@ -9,7 +9,7 @@ import { Toaster, toast } from 'sonner'
 import addNewNote from '../api/addNote'
 import Link from "next/link";
 
-export default function addNote() {
+export default function AddNote() {
 
     const [Temat, setTemat] = useState("");
     const [Przedmiot, SetPrzedmiot] = useState("polski");
