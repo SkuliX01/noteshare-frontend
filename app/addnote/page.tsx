@@ -1,5 +1,5 @@
 "use client"
-
+import { ChangeEvent } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from '@/components/ui/button'
 import { useState } from "react"
@@ -16,19 +16,19 @@ export default function AddNote() {
     const [Notatka, setNotatka] = useState("");
     const [Autor, setAutor] = useState("");
 
-    const HandleTematChange = (event) => {
+    const HandleTematChange = (event: ChangeEvent<HTMLInputElement>) => {
         setTemat(event.target.value)
     }
 
-    const HandlePrzedmiotChange = (event) => {
+    const HandlePrzedmiotChange = (event: ChangeEvent<HTMLInputElement>) => {
         SetPrzedmiot(event.target.value)
     }
 
-    const HandleAutorChange = (event) => {
+    const HandleAutorChange = (event: ChangeEvent<HTMLInputElement>) => {
         setAutor(event.target.value)
     }
 
-    const HandleNotatkaChange = (event) => {
+    const HandleNotatkaChange = (event: ChangeEvent<HTMLInputElement>) => {
         setNotatka(event.target.value)
     }
 
