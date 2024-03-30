@@ -1,5 +1,5 @@
 "use client"
-import { ChangeEvent } from "react"
+import { ChangeEvent, ChangeEventHandler } from "react"
 import { Input } from "@/components/ui/input"
 import { Button } from '@/components/ui/button'
 import { useState } from "react"
@@ -28,8 +28,8 @@ export default function AddNote() {
         setAutor(event.target.value)
     }
 
-    const HandleNotatkaChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setNotatka(event.target.value)
+    const HandleNotatkaChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
+        setNotatka(event.currentTarget.value);
     }
 
     return (
