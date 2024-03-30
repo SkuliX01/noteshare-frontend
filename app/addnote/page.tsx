@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Subjectlist } from '../mycomponents/list'
 import { Toaster, toast } from 'sonner'
 import addNewNote from '../api/addNote'
+import Link from "next/link";
 
 export default function addNote() {
 
@@ -37,12 +38,15 @@ export default function addNote() {
             <Toaster richColors position="top-right" closeButton/>
                 <p className="text-center text-[24px]">Note Share</p>
                 <div className="flex justify-center align-center mt-[10px]">
-                    <div>
+                    <div className="flex flex-col">
                     <Input placeholder="Temat" value={Temat} onChange={HandleTematChange} className="w-[290px]"/>
                     <Textarea placeholder="Wpisz tutaj treść swojej notatki" className="resize-none mt-[10px]" value={Notatka} onChange={HandleNotatkaChange}/>
                     <Subjectlist value={Przedmiot} onChange={HandlePrzedmiotChange}/>
                     <Input placeholder="Autor" value={Autor} onChange={HandleAutorChange} className="mt-[10px]"></Input>
                     <Button className="w-[290px] mt-[10px] bg-[#2462eb] text-white hover:bg-[#163b8d]" onClick={() => addNewNote(Temat, Notatka, Przedmiot, Autor)}>Dodaj nową notatkę</Button>
+                    <Button asChild className="w-[290px] mt-[10px] bg-[#2462eb] text-white hover:bg-[#163b8d]">
+                        <Link href={'/searchallnotes'}>Przeczytaj wszystkie notatki</Link>
+                    </Button>
                     </div>
                 </div>
             </section>
