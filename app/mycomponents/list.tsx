@@ -1,7 +1,13 @@
 
 import * as React from "react"
 
-export function Subjectlist({value, onChange}) {
+
+interface SubjectlistProps {
+  value: string;
+  onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+export function Subjectlist({value, onChange}: SubjectlistProps) {
 
   return (
     <div>
