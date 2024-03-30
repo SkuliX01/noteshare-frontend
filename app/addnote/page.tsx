@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { useState } from "react"
 import { Textarea } from "@/components/ui/textarea";
 import { Subjectlist } from '../mycomponents/list'
+import { Toaster, toast } from 'sonner'
 import addNewNote from '../api/addNote'
 
 export default function addNote() {
@@ -33,6 +34,7 @@ export default function addNote() {
     return (
         <main className="flex min-h-screen flex-col align-items justify-between p-12">
             <section id="main">
+            <Toaster richColors position="top-right" closeButton/>
                 <p className="text-center text-[24px]">Note Share</p>
                 <div className="flex justify-center align-center mt-[10px]">
                     <div>
@@ -40,7 +42,7 @@ export default function addNote() {
                     <Textarea placeholder="Wpisz tutaj treść swojej notatki" className="resize-none mt-[10px]" value={Notatka} onChange={HandleNotatkaChange}/>
                     <Subjectlist value={Przedmiot} onChange={HandlePrzedmiotChange}/>
                     <Input placeholder="Autor" value={Autor} onChange={HandleAutorChange} className="mt-[10px]"></Input>
-                    <Button className="w-[290px] mt-[10px]" onClick={() => addNewNote(Temat, Notatka, Przedmiot, Autor)}>Dodaj nową notatkę</Button>
+                    <Button className="w-[290px] mt-[10px] bg-[#2462eb] text-white hover:bg-[#163b8d]" onClick={() => addNewNote(Temat, Notatka, Przedmiot, Autor)}>Dodaj nową notatkę</Button>
                     </div>
                 </div>
             </section>

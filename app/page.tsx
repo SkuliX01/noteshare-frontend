@@ -6,12 +6,12 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col align-items justify-between p-12">
       <section id="hero">
-        <p className="text-[36px] text-center">Noteshare </p>
-        <p className='text-center text-[24px]'>~ App where you can share your notes</p>
+        <p className="text-[36px] text-center font-medium">Noteshare </p>
+        <p className='text-center text-[24px] font-extralight'>~ App where you can share your notes</p>
         <div className="flex justify-center align-center pt-[15px]">
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button variant="outline" className="mr-[10px] bg-black text-white hover:bg-[#292f3d] hover:text-white">Read More</Button>
+              <Button variant="outline" className="mr-[10px] bg-[#2462eb] text-white hover:bg-[#163b8d] hover:text-white">Read More</Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>
@@ -40,7 +40,7 @@ export default function Home() {
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
-          <Button asChild variant="outline" className="mr-[10px] bg-black text-white hover:bg-[#292f3d] hover:text-white">
+          <Button asChild variant="outline" className="mr-[10px] bg-[#2462eb] text-white hover:bg-[#163b8d] hover:text-white">
             <Link href={"/addnote"}>Get Started</Link>
           </Button>
         </div>
