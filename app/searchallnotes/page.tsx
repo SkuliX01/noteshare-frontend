@@ -4,8 +4,16 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Note from "../mycomponents/note"
 
+interface Note {
+  id: number,
+  title: string,
+  subject: string,
+  description: string,
+  author: string,
+}
+
 const MyComponent = () => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState<Note[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<any>(null);
 
