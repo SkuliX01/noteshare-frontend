@@ -56,6 +56,7 @@ const MyComponent = () => {
           subject={note.subject}
           description={note.description}
           author={note.author}
+          id={note.id}
         />
       ))}
     </div>
