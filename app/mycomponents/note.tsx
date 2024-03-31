@@ -20,7 +20,7 @@ export default function Note({title, subject, description, author, id}: NoteProp
         const anchor = document.createElement('a');
         anchor.href = URL.createObjectURL(blob);
 
-        anchor.download = `Notatka: ${title}`;
+        anchor.download = `${title}`;
 
         document.body.appendChild(anchor);
         anchor.click();
