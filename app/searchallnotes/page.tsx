@@ -21,7 +21,7 @@ const MyComponent = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('http://51.77.48.135:5820/api/v1/getallnotes');
+        const response = await axios.get('https://51.77.48.135:5820/api/v1/getallnotes');
         setNotes(response.data.notes); // Accessing response.data.notes
         setIsLoading(false);
       } catch (error) {
