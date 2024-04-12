@@ -2,7 +2,7 @@ import axios from 'axios'
 import { toast } from 'sonner'
 
 export default function addNewNote(temat: String, tresc: String, przedmiot: String, autor: String) {
-    axios.post(`51.77.48.135:5820/api/v1/insert/${temat}/${tresc}/${przedmiot}/${autor}`, {
+    axios.post(`http://51.77.48.135:5820/api/v1/insert/${temat}/${tresc}/${przedmiot}/${autor}`, {
         
     })  
     .then (function (response) {
