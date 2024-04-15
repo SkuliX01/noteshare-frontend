@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Note from "../mycomponents/note"
+import { HashLoader } from 'react-spinners'
 
 interface Note {
   id: number,
@@ -39,7 +40,7 @@ const MyComponent = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div className='flex justify-center items-center align-center h-screen'><HashLoader color='#2462eb'/></div>;
   }
 
   if (error) {
