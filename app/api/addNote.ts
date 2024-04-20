@@ -2,11 +2,14 @@ import axios from 'axios'
 import { toast } from 'sonner'
 
 export default function addNewNote(temat: String, tresc: String, przedmiot: String, autor: String) {
-    axios.post(`https://skulix.xyz:5820/api/v1/insert/${temat}/${tresc}/${przedmiot}/${autor}`, {
-        
+    axios.post(`https://skulix.xyz:5820/api/createNote`, {
+        title: temat,
+        body: tresc,
+        subject: przedmiot,
+        author: autor
     })  
     .then (function (response) {
-        if (response.status === 200) {
+        if (response.status === 201) {
             // Successful response
             toast.success(`Pomyślnie dodano nową notatkę z przedmiotu: ${przedmiot}`);
         }

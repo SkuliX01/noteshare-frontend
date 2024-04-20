@@ -9,7 +9,7 @@ interface Note {
   id: number,
   title: string,
   subject: string,
-  description: string,
+  body: string,
   author: string,
 }
 
@@ -22,7 +22,7 @@ const MyComponent = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get('https://skulix.xyz:5820/api/v1/getallnotes');
+        const response = await axios.get('https://skulix.xyz:5820/api/getNotes');
         setNotes(response.data.notes); // Accessing response.data.notes
         setIsLoading(false);
       } catch (error) {
@@ -55,7 +55,7 @@ const MyComponent = () => {
           key={note.id}
           title={note.title}
           subject={note.subject}
-          description={note.description}
+          description={note.body}
           author={note.author}
           id={note.id}
         />
