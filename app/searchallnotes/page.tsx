@@ -2,15 +2,15 @@
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Note from "../mycomponents/note"
-import { HashLoader } from 'react-spinners'
+import Note from "../mycomponents/note";
+import { HashLoader } from 'react-spinners';
 
 interface Note {
-  id: number,
-  title: string,
-  subject: string,
-  body: string,
-  author: string,
+  _id: string;
+  title: string;
+  subject: string;
+  body: string;
+  author: string;
 }
 
 const MyComponent = () => {
@@ -23,7 +23,7 @@ const MyComponent = () => {
       try {
         setIsLoading(true);
         const response = await axios.get('https://skulix.xyz:5820/api/getNotes');
-        setNotes(response.data.notes); // Accessing response.data.notes
+        setNotes(response.data); // Update to setNotes(response.data)
         setIsLoading(false);
       } catch (error) {
         setError(error);
@@ -52,12 +52,11 @@ const MyComponent = () => {
       <h1 className='text-center text-light'>Wszystkie nasze notatki</h1>
       {notes.map(note => (
         <Note
-          key={note.id}
+          key={note._id}
           title={note.title}
           subject={note.subject}
           description={note.body}
           author={note.author}
-          id={note.id}
         />
       ))}
     </div>

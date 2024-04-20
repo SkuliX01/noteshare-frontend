@@ -5,11 +5,10 @@ interface NoteProps {
     subject: string,
     description: string,
     author: string,
-    id: number,
 }
 
 
-export default function Note({title, subject, description, author, id}: NoteProps){
+export default function Note({title, subject, description, author}: NoteProps){
 
     const DownloadNote = () => {
 
