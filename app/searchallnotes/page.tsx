@@ -6,6 +6,7 @@ import Note from "../mycomponents/note";
 import { HashLoader } from 'react-spinners';
 
 interface Note {
+  image: string;
   _id: string;
   title: string;
   subject: string;
@@ -57,6 +58,7 @@ const MyComponent = () => {
           subject={note.subject}
           description={note.body}
           author={note.author}
+          image={note.image}
         />
       ))}
     </div>
