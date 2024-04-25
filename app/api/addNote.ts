@@ -2,9 +2,9 @@ import axios from 'axios'
 import { toast } from 'sonner'
 
 export default function addNewNote(temat: String, tresc: String, przedmiot: String, autor: String, zdjecie: string) {
-    axios.post(`https://skulix.xyz:5820/api/createNote`, {
+    axios.post(`https://skulix.xyz:5801/note/create`, {
         title: temat,
-        body: tresc,
+        content: tresc,
         image: zdjecie,
         subject: przedmiot,
         author: autor
