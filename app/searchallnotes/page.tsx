@@ -6,14 +6,12 @@ import Note from "../mycomponents/note";
 import { HashLoader } from 'react-spinners';
 
 interface Note {
-  id: number;
-  title: string;
-  content: string;
-  image: string;
-  subject: string;
-  author: string;
+  ID: number;
+  Title: string;
+  Body: string;
+  Subject: string;
+  Author: string;
 }
-
 const MyComponent = () => {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,12 +39,11 @@ const MyComponent = () => {
       ) : (
         notes.map((note: Note) => (
           <Note
-            key={note.id}
-            title={note.title}
-            description={note.content}
-            image={note.image}
-            subject={note.subject}
-            author={note.author}
+            key={note.ID}
+            title={note.Title}
+            body={note.Body}
+            subject={note.Subject}
+            author={note.Author}
           />
         ))
       )}
