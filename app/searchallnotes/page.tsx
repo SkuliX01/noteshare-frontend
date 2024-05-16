@@ -20,7 +20,7 @@ const MyComponent = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('https://skulix.xyz:5801/note/all')
+    axios.get('https://skulix.xyz:3000/allNotes')
       .then(response => {
         setNotes(response.data.notes);
         setIsLoading(false);

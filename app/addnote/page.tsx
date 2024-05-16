@@ -33,44 +33,6 @@ export default function AddNote() {
         setNotatka(event.currentTarget.value);
     }
 
-    const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const file = event.target.files?.[0];
-        const maxSize = 3 * 1024 * 1024; // 3 MB
-        const minWidth = 800; // Minimum width
-        const minHeight = 800; // Minimum height
-    
-        if (file && file.size > maxSize) {
-            toast.error("Maximum image size is 3MB");
-            event.target.value = ""; // Reset the input value
-        } else if (file) {
-            const url = URL.createObjectURL(file);
-            const img = new Image() as HTMLImageElement;
-
-            img.onload = function() {
-                if (img.width < minWidth || img.height < minHeight) {
-                    toast.error("Minimum image dimensions are 800x800");
-                    URL.revokeObjectURL(url); // Free up memory
-                    event.target.value = ""; // Reset the input value
-                } else {
-                    setImage(file);
-                    URL.revokeObjectURL(url); // Free up memory
-                }
-            };
-
-            img.src = url;
-        }
-    };
-
-    const convertImageToBase64 = (file: File): Promise<string> => {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                resolve(reader.result as string);
-            };
-            reader.onerror = reject;
-            reader.readAsDataURL(file);
-        });
-    }
 
     return (
         <main className="flex min-h-screen flex-col align-items justify-between p-12">
@@ -81,10 +43,9 @@ export default function AddNote() {
                     <div className="flex flex-col">
                         <Input placeholder="Temat" value={Temat} onChange={HandleTematChange} className="w-[290px]" required/>
                         <Textarea placeholder="Wpisz tutaj treść swojej notatki" className="resize-none mt-[10px]" value={Notatka} onChange={HandleNotatkaChange} required/>
-                        <Input type="file" id="picture" placeholder="Zdjęcie" className="w-[290px] mt-[10px]" onChange={handleImageChange} required />
                         <Subjectlist value={Przedmiot} onChange={HandlePrzedmiotChange}/>
                         <Input placeholder="Autor" value={Autor} onChange={HandleAutorChange} className="mt-[10px]" required/>
-                        <Button className="w-[290px] mt-[10px] bg-[#2462eb] text-white hover:bg-[#163b8d]" onClick={async () => { addNewNote(Temat, Notatka, Przedmiot, Autor, await convertImageToBase64(img as File) || "s"); }}>Dodaj nową notatkę</Button>
+                        <Button className="w-[290px] mt-[10px] bg-[#2462eb] text-white hover:bg-[#163b8d]" onClick={async () => { addNewNote(Temat, Notatka, Przedmiot, Autor)}}>Dodaj nową notatkę</Button>
                         <Button asChild className="w-[290px] mt-[10px] bg-[#2462eb] text-white hover:bg-[#163b8d]">
                             <Link href={'/searchallnotes'}>Przeczytaj wszystkie notatki</Link>
                         </Button>
