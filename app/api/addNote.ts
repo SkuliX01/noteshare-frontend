@@ -4,7 +4,7 @@ import { toast } from 'sonner'
 export default function addNewNote(temat: String, tresc: String, przedmiot: String, autor: String) {
     axios.post(`https://skulix.xyz:3000/create`, {
         title: temat,
-        content: tresc,
+        body: tresc,
         subject: przedmiot,
         author: autor
     })  
